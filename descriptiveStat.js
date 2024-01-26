@@ -180,6 +180,10 @@ class DataSet {
     } else {
       Q3 = (Q3list[Q3middleIndex] + Q3list[Q3middleIndex - 1]) / 2;
     }
+
+    //5. finally get quartile deviation = (Q3 - Q1) / 2
+    let quartDev = (Q3 - Q1) / 2;
+    return quartDev;
   }
 }
 
