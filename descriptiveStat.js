@@ -168,6 +168,18 @@ class DataSet {
     else {
       Q1 = (Q1list[Q1middleIndex] + Q1list[Q1middleIndex - 1]) / 2;
     }
+
+    //4. for Q3, get the middle index of the Q1List
+    let Q3;
+    let Q3listLength = Q3list.length;
+    let Q3middleIndex = Math.floor(Q3list.length / 2);
+
+    // if length of Q3 list is odd, the Q3 would be
+    if (Q3listLength % 2 !== 0) {
+      Q3 = Q3list[Q3middleIndex];
+    } else {
+      Q3 = (Q3list[Q3middleIndex] + Q3list[Q3middleIndex - 1]) / 2;
+    }
   }
 }
 
