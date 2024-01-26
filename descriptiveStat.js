@@ -138,6 +138,22 @@ class DataSet {
     // capture the length of my array and the middle value index in variables
     let length = array.length;
     let middleIndex = Math.floor(array.length / 2);
+
+    // split the array into quartiles Q1(lower half) and Q3(upper half)
+    let Q1list;
+    let Q3list;
+
+    // when array is odd, split array this way
+    if (length % 2 !== 0){
+        Q1list = array.slice(0, middleIndex)
+        Q3list = array.slice(middleIndex + 1, )
+    } 
+
+    // when array is even, split as follows
+    else{
+        Q1list = array.slice(0, middleIndex + 1);
+        Q3list = array.slice(middleIndex - 1, )
+    }
   }
 }
 
