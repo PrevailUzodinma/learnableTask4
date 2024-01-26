@@ -158,6 +158,7 @@ class DataSet {
     //3. for Q1, get the median of the Q1List
     let Q1;
     Q1 = DataSet.calcMedian(Q1list);
+
     //4. for Q3, get the median of the Q3List
     let Q3;
     Q3 = DataSet.calcMedian(Q3list);
