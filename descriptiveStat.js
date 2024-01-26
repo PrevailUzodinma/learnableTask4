@@ -60,6 +60,14 @@ class DataSet {
       // push the value of no of occurences into the array
       mappedArray.push(mapElements[element]);
     }
+
+    //3. find the max value in the mappedArray
+    let max = mappedArray[0];
+    for (let i of mappedArray) {
+      if (max < i) {
+        max = i;
+      }
+    }
   }
 }
 //DataSet.calcMean([1, 2, 5, 6, 7]);
