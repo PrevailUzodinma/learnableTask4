@@ -130,6 +130,15 @@ class DataSet {
     // this is simply the square root of variance so...
     return Math.sqrt(DataSet.calcVar(array));
   }
+
+  static QuartDev(array){
+    //sort the array in ascending order
+    array = array.sort((a, b) => a - b);
+
+    // capture the length of my array and the middle value index in variables
+    let length = array.length;
+    let middleIndex = Math.floor(array.length / 2);
+  }
 }
 
 /* let mean = (DataSet.calcMean([1, 2, 5, 6, 7]));
