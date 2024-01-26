@@ -49,6 +49,17 @@ class DataSet {
         mapElements[element] = 1;
       }
     }
+
+    //2. filter only the no of occurence into an array
+
+    // create an array
+    let mappedArray = [];
+
+    // iterate through the object
+    for (let element in mapElements) {
+      // push the value of no of occurences into the array
+      mappedArray.push(mapElements[element]);
+    }
   }
 }
 //DataSet.calcMean([1, 2, 5, 6, 7]);
