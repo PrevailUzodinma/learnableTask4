@@ -17,3 +17,8 @@ class Mammal {
         console.log(`I am a Mammal, it is ${Mammal.liveBirth} that I give birth to my young ones alive.`)
     }
 }
+
+// how to access Class properties and methods
+Mammal.isMammal();
+console.log(Mammal.vertebrate);
+Mammal.talk();
