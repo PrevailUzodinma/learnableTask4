@@ -125,6 +125,11 @@ class DataSet {
 
     return variance;
   }
+
+  static calcStanDev(array){
+    // this is simply the square root of variance so...
+    return Math.sqrt(DataSet.calcVar(array));
+  }
 }
 
 /* let mean = (DataSet.calcMean([1, 2, 5, 6, 7]));
@@ -137,10 +142,13 @@ let mode = DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
 console.log(`The mode of this dataset is ${mode}`)
 
 let range = DataSet.calcRange([3, 5, 6, 2, 7, 9, 3])
-console.log(`The range of this dataset is ${range}`); */
+console.log(`The range of this dataset is ${range}`);
 
 let meanDev = DataSet.calcMeanDev([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The mean deviation of this dataset is ${meanDev}`);
 
 let variance = DataSet.calcVar([3, 5, 6, 2, 7, 9, 3]);
-console.log(`The variance of this dataset is ${variance}`);
+console.log(`The variance of this dataset is ${variance}`); */
+
+let stanDev = DataSet.calcStanDev([3, 5, 6, 2, 7, 9, 3]);
+console.log(`The standard deviation of this dataset is ${stanDev}`);
