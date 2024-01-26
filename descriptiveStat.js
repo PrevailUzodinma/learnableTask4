@@ -35,6 +35,10 @@ class DataSet {
     }
 }
 
+static calcMode(array){
+    
+}
+
 }
 //DataSet.calcMean([1, 2, 5, 6, 7]);
-DataSet.calcMedian([6,8,2,4,8,9,0]);
+//DataSet.calcMedian([6,8,2,4,8,9,0]);
