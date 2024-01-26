@@ -93,13 +93,13 @@ class DataSet {
     return min;
   }
 
-  static calcRange(array){
+  static calcRange(array) {
     let range = DataSet.maxValue(array) - DataSet.minValue(array);
-    console.log(`The range is ${range}`)
+    console.log(`The range is ${range}`);
     return range;
   }
 }
 DataSet.calcMean([1, 2, 5, 6, 7]);
 DataSet.calcMedian([6, 8, 2, 4, 8, 9, 0]);
 DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
-DataSet.calcRange([3,5,6,2,7,9,3]);
+DataSet.calcRange([3, 5, 6, 2, 7, 9, 3]);
