@@ -12,4 +12,8 @@ class Mammal {
             console.log ("Yes, I am a Mammal")
         }
 }
+
+    static talk(){
+        console.log(`I am a Mammal, it is ${Mammal.liveBirth} that I give birth to my young ones alive.`)
+    }
 }
