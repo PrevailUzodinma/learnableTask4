@@ -111,6 +111,20 @@ class DataSet {
 
     return meanDev;
   }
+
+  static calcVar(array) {
+    // declare a sum variable and initialize to 0
+    let sum = 0;
+    // set a loop to sum (x- mean) ** 2 for all values of x in array(squared difference)
+    for (let x of array) {
+      sum = sum + ((x - DataSet.calcMean(array)) ** 2);
+    }
+
+    // divide the sum by array length to get variance (mea of squared difference)
+    let variance = sum / array.length;
+
+    return variance;
+  }
 }
 
 /* let mean = (DataSet.calcMean([1, 2, 5, 6, 7]));
@@ -127,3 +141,6 @@ console.log(`The range of this dataset is ${range}`); */
 
 let meanDev = DataSet.calcMeanDev([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The mean deviation of this dataset is ${meanDev}`);
+
+let variance = DataSet.calcVar([3, 5, 6, 2, 7, 9, 3]);
+console.log(`The variance of this dataset is ${variance}`);
