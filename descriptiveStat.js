@@ -155,31 +155,12 @@ class DataSet {
       Q3list = array.slice(middleIndex - 1);
     }
 
-    //3. for Q1, get the middle index of the Q1List
+    //3. for Q1, get the median of the Q1List
     let Q1;
-    let Q1listLength = Q1list.length;
-    let Q1middleIndex = Math.floor(Q1list.length / 2);
-
-    // if length of Q1 list is odd, the Q1 would be
-    if (Q1listLength % 2 !== 0) {
-      Q1 = Q1list[Q1middleIndex];
-    }
-    // if even,
-    else {
-      Q1 = (Q1list[Q1middleIndex] + Q1list[Q1middleIndex - 1]) / 2;
-    }
-
-    //4. for Q3, get the middle index of the Q1List
+    Q1 = DataSet.calcMedian(Q1list);
+    //4. for Q3, get the median of the Q3List
     let Q3;
-    let Q3listLength = Q3list.length;
-    let Q3middleIndex = Math.floor(Q3list.length / 2);
-
-    // if length of Q3 list is odd, the Q3 would be
-    if (Q3listLength % 2 !== 0) {
-      Q3 = Q3list[Q3middleIndex];
-    } else {
-      Q3 = (Q3list[Q3middleIndex] + Q3list[Q3middleIndex - 1]) / 2;
-    }
+    Q3 = DataSet.calcMedian(Q3list);
 
     //5. finally get quartile deviation = (Q3 - Q1) / 2
     let quartDev = (Q3 - Q1) / 2;
@@ -209,4 +190,4 @@ let stanDev = DataSet.calcStanDev([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The standard deviation of this dataset is ${stanDev}`); */
 
 let quartileDev = DataSet.calcQuartDev([3, 5, 6, 2, 7, 9, 3]);
-console.log(`The quartile deviation of this dataset is ${quartileDev}`)
+console.log(`The quartile deviation of this dataset is ${quartileDev}`);
