@@ -131,7 +131,7 @@ class DataSet {
     return Math.sqrt(DataSet.calcVar(array));
   }
 
-  static QuartDev(array) {
+  static calcQuartDev(array) {
     //1. sort the array in ascending order
     array = array.sort((a, b) => a - b);
 
@@ -203,7 +203,10 @@ let meanDev = DataSet.calcMeanDev([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The mean deviation of this dataset is ${meanDev}`);
 
 let variance = DataSet.calcVar([3, 5, 6, 2, 7, 9, 3]);
-console.log(`The variance of this dataset is ${variance}`); */
+console.log(`The variance of this dataset is ${variance}`);
 
 let stanDev = DataSet.calcStanDev([3, 5, 6, 2, 7, 9, 3]);
-console.log(`The standard deviation of this dataset is ${stanDev}`);
+console.log(`The standard deviation of this dataset is ${stanDev}`); */
+
+let quartileDev = DataSet.calcQuartDev([3, 5, 6, 2, 7, 9, 3]);
+console.log(`The quartile deviation of this dataset is ${quartileDev}`)
