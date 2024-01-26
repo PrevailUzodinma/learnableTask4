@@ -84,7 +84,7 @@ class DataSet {
   }
 
   static minValue(array) {
-    let min = mappedArray[0];
+    let min = array[0];
     for (let i of array) {
       if (min > i) {
         min = i;
@@ -102,3 +102,4 @@ class DataSet {
 DataSet.calcMean([1, 2, 5, 6, 7]);
 DataSet.calcMedian([6, 8, 2, 4, 8, 9, 0]);
 DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
+DataSet.calcRange([3,5,6,2,7,9,3]);
