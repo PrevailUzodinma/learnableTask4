@@ -62,12 +62,7 @@ class DataSet {
     }
 
     //3. find the max value in the mappedArray
-    let max = mappedArray[0];
-    for (let i of mappedArray) {
-      if (max < i) {
-        max = i;
-      }
-    }
+    let max = DataSet.maxValue(mappedArray);
 
     //4. get the key element that matches with the max-value
     for (let key in mapElements) {
@@ -77,8 +72,33 @@ class DataSet {
       }
     }
   }
+
+  static maxValue(array) {
+    let max = array[0];
+    for (let i of array) {
+      if (max < i) {
+        max = i;
+      }
+    }
+    return max;
+  }
+
+  static minValue(array) {
+    let min = mappedArray[0];
+    for (let i of array) {
+      if (min > i) {
+        min = i;
+      }
+    }
+    return min;
+  }
+
+  static calcRange(array){
+    let range = DataSet.maxValue(array) - DataSet.minValue(array);
+    console.log(`The range is ${range}`)
+    return range;
+  }
 }
 DataSet.calcMean([1, 2, 5, 6, 7]);
-DataSet.calcMedian([6,8,2,4,8,9,0]);
-DataSet.calcMode([6,8,2,6,6,6,6,4,8,9,0]);
-
+DataSet.calcMedian([6, 8, 2, 4, 8, 9, 0]);
+DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
