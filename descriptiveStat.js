@@ -68,6 +68,14 @@ class DataSet {
         max = i;
       }
     }
+    
+    //4. get the key element that matches with the max-value
+    for (let key in mapElements) {
+      if (mapElements[key] === max) {
+        console.log(key);
+        return key;
+      }
+    }
   }
 }
 //DataSet.calcMean([1, 2, 5, 6, 7]);
