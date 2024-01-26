@@ -6,7 +6,6 @@ class DataSet {
     }
     let mean = sum / array.length;
 
-    console.log(`The mean is ${mean}`);
     return mean;
   }
 
@@ -24,13 +23,13 @@ class DataSet {
     //if array length is odd
     if (length % 2 !== 0) {
       median = array[middleIndex];
-      console.log(`The median is ${median}`);
+
       return median;
     }
     // if array length is even
     else {
       median = (array[middleIndex] + array[middleIndex - 1]) / 2;
-      console.log(`The median is ${median}`);
+
       return median;
     }
   }
@@ -67,7 +66,6 @@ class DataSet {
     //4. get the key element that matches with the max-value
     for (let key in mapElements) {
       if (mapElements[key] === max) {
-        console.log(`The mode is ${key}`);
         return key;
       }
     }
@@ -95,11 +93,37 @@ class DataSet {
 
   static calcRange(array) {
     let range = DataSet.maxValue(array) - DataSet.minValue(array);
-    console.log(`The range is ${range}`);
+    console.log(`The range of this dataset is ${range}`);
+
     return range;
   }
+
+  static calcMeanDev(array) {
+    // declare a sum variable and initialize to 0
+    let sum = 0;
+    // set a loop to sum (x- mean) for all values of x in array
+    for (let x of array) {
+      sum = sum + Math.abs(x - DataSet.calcMean(array));
+    }
+
+    // divide the sum by array length to get mean deviation
+    let meanDev = sum / array.length;
+
+    return meanDev;
+  }
 }
-DataSet.calcMean([1, 2, 5, 6, 7]);
-DataSet.calcMedian([6, 8, 2, 4, 8, 9, 0]);
-DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
-DataSet.calcRange([3, 5, 6, 2, 7, 9, 3]);
+
+/* let mean = (DataSet.calcMean([1, 2, 5, 6, 7]));
+console.log(`The mean of this dataset is ${mean}`);
+
+let median = DataSet.calcMedian([6, 8, 2, 4, 8, 9, 0]);
+console.log(`The median of this dataset is ${median}`)
+
+let mode = DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
+console.log(`The mode of this dataset is ${mode}`)
+
+let range = DataSet.calcRange([3, 5, 6, 2, 7, 9, 3])
+console.log(`The range of this dataset is ${range}`); */
+
+let meanDev = DataSet.calcMeanDev([3, 5, 6, 2, 7, 9, 3]);
+console.log(`The mean deviation of this dataset is ${meanDev}`);
