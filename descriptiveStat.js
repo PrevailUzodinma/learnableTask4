@@ -6,7 +6,7 @@ class DataSet {
     }
     let mean = sum / array.length;
 
-    console.log(mean);
+    console.log(`The mean is ${mean}`);
     return mean;
   }
 
@@ -24,20 +24,20 @@ class DataSet {
     //if array length is odd
     if (length % 2 !== 0) {
       median = array[middleIndex];
-      console.log(median);
+      console.log(`The median is ${median}`);
       return median;
     }
     // if array length is even
     else {
       median = (array[middleIndex] + array[middleIndex - 1]) / 2;
-      console.log(median);
+      console.log(`The median is ${median}`);
       return median;
     }
   }
 
   static calcMode(array) {
     //1. create an object to hold "element : no of times it appears in array"
-    mapElements = {};
+    let mapElements = {};
     //scan through my array
     for (let element of array) {
       //check if element (i.e key) ia already in the object
@@ -68,15 +68,17 @@ class DataSet {
         max = i;
       }
     }
-    
+
     //4. get the key element that matches with the max-value
     for (let key in mapElements) {
       if (mapElements[key] === max) {
-        console.log(key);
+        console.log(`The mode is ${key}`);
         return key;
       }
     }
   }
 }
-//DataSet.calcMean([1, 2, 5, 6, 7]);
-//DataSet.calcMedian([6,8,2,4,8,9,0]);
+DataSet.calcMean([1, 2, 5, 6, 7]);
+DataSet.calcMedian([6,8,2,4,8,9,0]);
+DataSet.calcMode([6,8,2,6,6,6,6,4,8,9,0]);
+
