@@ -117,7 +117,7 @@ class DataSet {
     let sum = 0;
     // set a loop to sum (x- mean) ** 2 for all values of x in array(squared difference)
     for (let x of array) {
-      sum = sum + ((x - DataSet.calcMean(array)) ** 2);
+      sum = sum + (x - DataSet.calcMean(array)) ** 2;
     }
 
     // divide the sum by array length to get variance (mea of squared difference)
@@ -126,33 +126,47 @@ class DataSet {
     return variance;
   }
 
-  static calcStanDev(array){
+  static calcStanDev(array) {
     // this is simply the square root of variance so...
     return Math.sqrt(DataSet.calcVar(array));
   }
 
-  static QuartDev(array){
-    //sort the array in ascending order
+  static QuartDev(array) {
+    //1. sort the array in ascending order
     array = array.sort((a, b) => a - b);
 
     // capture the length of my array and the middle value index in variables
     let length = array.length;
     let middleIndex = Math.floor(array.length / 2);
 
-    // split the array into quartiles Q1(lower half) and Q3(upper half)
+    //2. split the array into quartiles Q1(lower half) and Q3(upper half)
     let Q1list;
     let Q3list;
 
     // when array is odd, split array this way
-    if (length % 2 !== 0){
-        Q1list = array.slice(0, middleIndex)
-        Q3list = array.slice(middleIndex + 1, )
-    } 
+    if (length % 2 !== 0) {
+      Q1list = array.slice(0, middleIndex);
+      Q3list = array.slice(middleIndex + 1);
+    }
 
     // when array is even, split as follows
-    else{
-        Q1list = array.slice(0, middleIndex + 1);
-        Q3list = array.slice(middleIndex - 1, )
+    else {
+      Q1list = array.slice(0, middleIndex + 1);
+      Q3list = array.slice(middleIndex - 1);
+    }
+
+    //3. for Q1, get the middle index of the Q1List
+    let Q1;
+    let Q1listLength = Q1list.length;
+    let Q1middleIndex = Math.floor(Q1list.length / 2);
+
+    // if length of Q1 list is odd, the Q1 would be
+    if (Q1listLength % 2 !== 0) {
+      Q1 = Q1list[Q1middleIndex];
+    }
+    // if even,
+    else {
+      Q1 = (Q1list[Q1middleIndex] + Q1list[Q1middleIndex - 1]) / 2;
     }
   }
 }
