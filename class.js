@@ -5,4 +5,11 @@ class Mammal {
     //class with static properties
     static liveBirth = true;
     static vertebrate = true;
+
+    //class with static methods
+    static isMammal(){
+        if(Mammal.liveBirth){
+            console.log ("Yes, I am a Mammal")
+        }
+}
 }
