@@ -18,10 +18,10 @@ class MovieApi {
   }
 
   listMovies() {
-    console.log("Movies in the library:");
+    console.log("\n Movies in the library:");
     this.movies.forEach((movie) => {
       console.log(
-        `- ${movie.title} (${movie.genre}) - ${
+        `* ${movie.title} (${movie.genre}) - ${
           movie.available ? "Available" : "Not Available"
         }`
       );
@@ -34,12 +34,27 @@ class MovieApi {
     if (movie) {
       if (movie.available) {
         movie.available = false;
-        console.log(`You've just rented "${title}". Enjoy your movie!`);
+        console.log(`\n You've just rented "${title}". Enjoy your movie!`);
       } else {
-        console.log(`Oops! Sorry, "${title}" is currently unavailable.`);
+        console.log(`\n Oops! Sorry, "${title}" is currently unavailable.`);
       }
     } else {
-      console.log(`"${title}" not found in the library.`);
+      console.log(`\n "${title}" not found in the library.`);
     }
   }
 }
+
+// Let's test the Movie API
+const admin = new MovieApi();
+
+admin.addMovie("Wish", "Animation");
+admin.addMovie("Aquaman", "Action");
+admin.addMovie("The Kitchen", "Drama");
+admin.addMovie("Lift", "Thriller");
+
+admin.listMovies();
+
+admin.rentMovie("The Kitchen");
+admin.rentMovie("The Marvels");
+
+admin.listMovies();
