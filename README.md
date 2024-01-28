@@ -20,3 +20,4 @@ and
 c. **movieApi.js**: I worked on a simple Movie renting API that lets people rent movies from a movie store. You can carry out basic functions like 
 - adding a movie to the movie store
 - seeing the list of movies and their availability
+- renting a movie if it is available or not.
