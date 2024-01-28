@@ -17,8 +17,14 @@ class Movie {
   }
 }
 
-class MovieLibrary {
+class MovieApi {
   constructor() {
     this.movies = [];
+  }
+
+  addMovie(title, genre) {
+    const newMovie = new Movie(title, genre, true);
+    this.movies.push(newMovie);
+    console.log(`"${title}" has been added to the library.`);
   }
 }
