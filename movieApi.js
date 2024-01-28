@@ -29,10 +29,13 @@ class MovieApi {
   }
 
   listMovies() {
-    console.log('Movies in the library:');
+    console.log("Movies in the library:");
     this.movies.forEach((movie) => {
-      console.log(`- ${movie.title} (${movie.genre}) - ${movie.available ? 'Available' : 'Not Available'}`);
+      console.log(
+        `- ${movie.title} (${movie.genre}) - ${
+          movie.available ? "Available" : "Not Available"
+        }`
+      );
     });
   }
 }
-
