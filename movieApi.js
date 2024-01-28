@@ -27,4 +27,12 @@ class MovieApi {
     this.movies.push(newMovie);
     console.log(`"${title}" has been added to the library.`);
   }
+
+  listMovies() {
+    console.log('Movies in the library:');
+    this.movies.forEach((movie) => {
+      console.log(`- ${movie.title} (${movie.genre}) - ${movie.available ? 'Available' : 'Not Available'}`);
+    });
+  }
 }
+
