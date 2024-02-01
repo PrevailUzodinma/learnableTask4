@@ -27,9 +27,9 @@ class MovieApi {
       );
     });
   }
-  
+
   rentMovie(title) {
-    const movie = this.movies.find(movie => movie.title === title);
+    const movie = this.movies.find((movie) => movie.title === title);
 
     if (movie) {
       if (movie.available) {
@@ -56,5 +56,3 @@ admin.listMovies();
 
 admin.rentMovie("The Kitchen");
 admin.rentMovie("The Marvels");
-
-admin.listMovies();

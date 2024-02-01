@@ -93,8 +93,6 @@ class DataSet {
 
   static calcRange(array) {
     let range = DataSet.maxValue(array) - DataSet.minValue(array);
-    console.log(`The range of this dataset is ${range}`);
-
     return range;
   }
 
@@ -169,16 +167,16 @@ class DataSet {
   }
 }
 
-/* let mean = (DataSet.calcMean([1, 2, 5, 6, 7]));
+let mean = DataSet.calcMean([1, 2, 5, 6, 7]);
 console.log(`The mean of this dataset is ${mean}`);
 
 let median = DataSet.calcMedian([6, 8, 2, 4, 8, 9, 0]);
-console.log(`The median of this dataset is ${median}`)
+console.log(`The median of this dataset is ${median}`);
 
 let mode = DataSet.calcMode([6, 8, 2, 6, 6, 6, 6, 4, 8, 9, 0]);
-console.log(`The mode of this dataset is ${mode}`)
+console.log(`The mode of this dataset is ${mode}`);
 
-let range = DataSet.calcRange([3, 5, 6, 2, 7, 9, 3])
+let range = DataSet.calcRange([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The range of this dataset is ${range}`);
 
 let meanDev = DataSet.calcMeanDev([3, 5, 6, 2, 7, 9, 3]);
@@ -188,7 +186,7 @@ let variance = DataSet.calcVar([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The variance of this dataset is ${variance}`);
 
 let stanDev = DataSet.calcStanDev([3, 5, 6, 2, 7, 9, 3]);
-console.log(`The standard deviation of this dataset is ${stanDev}`); */
+console.log(`The standard deviation of this dataset is ${stanDev}`);
 
 let quartileDev = DataSet.calcQuartDev([3, 5, 6, 2, 7, 9, 3]);
 console.log(`The quartile deviation of this dataset is ${quartileDev}`);
